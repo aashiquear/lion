@@ -24,7 +24,7 @@ InputParameters validParams<MatConvection>()
 }
 
 MatConvection::MatConvection(const InputParameters & parameters) :
-    DerivativeMaterialInterface<JvarMapInterface<Kernel> >(parameters),
+    DerivativeMaterialInterface<JvarMapInterfaceBase<Kernel> >(parameters),
     _conv_prop(getMaterialProperty<Real>("mat_prop")),
     _dconv_propdu(getMaterialPropertyDerivative<Real>("mat_prop", _var.name())),
     _driving_vector(getParam<RealVectorValue>("driving_vector")),

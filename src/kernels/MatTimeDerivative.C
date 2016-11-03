@@ -23,7 +23,7 @@ InputParameters validParams<MatTimeDerivative>()
 }
 
 MatTimeDerivative::MatTimeDerivative(const InputParameters & parameters) :
-    DerivativeMaterialInterface<JvarMapInterface<TimeDerivative > >(parameters),
+    DerivativeMaterialInterface<JvarMapInterfaceBase<TimeDerivative > >(parameters),
     _coeff(getMaterialProperty<Real>("mat_prop")),
     _dcoeffdu(getMaterialPropertyDerivative<Real>("mat_prop", _var.name())),
     _nvar(_coupled_moose_vars.size()),

@@ -28,7 +28,7 @@ InputParameters validParams<MatTimeDerivative>();
 /**
  * Compute convection term for phase field simulations
  */
-class MatTimeDerivative : public DerivativeMaterialInterface<JvarMapInterface<TimeDerivative> >
+class MatTimeDerivative : public DerivativeMaterialInterface<JvarMapInterfaceBase<TimeDerivative> >
 {
 public:
   MatTimeDerivative(const InputParameters & parameters);

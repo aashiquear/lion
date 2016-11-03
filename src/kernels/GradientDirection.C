@@ -23,7 +23,7 @@ InputParameters validParams<GradientDirection>()
 }
 
 GradientDirection::GradientDirection(const InputParameters & parameters) :
-    DerivativeMaterialInterface<JvarMapInterface<Kernel> >(parameters),
+    DerivativeMaterialInterface<JvarMapInterfaceBase<Kernel> >(parameters),
     _property(getMaterialProperty<Real>("mat_prop")),
     _dpropertydu(getMaterialPropertyDerivative<Real>("mat_prop", _var.name())),
     _nvar(_coupled_moose_vars.size()),

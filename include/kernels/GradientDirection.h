@@ -28,7 +28,7 @@ InputParameters validParams<GradientDirection>();
 /**
  * Compute convection term for phase field simulations
  */
-class GradientDirection : public DerivativeMaterialInterface<JvarMapInterface<Kernel> >
+class GradientDirection : public DerivativeMaterialInterface<JvarMapInterfaceBase<Kernel> >
 {
 public:
   GradientDirection(const InputParameters & parameters);
